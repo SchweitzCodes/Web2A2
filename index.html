@@ -27,11 +27,12 @@
             <a href="#"><img class="pb-50" src="../images/logorgb.png" alt=""></a>
         </div>
         <div class="menulink">
-            <a href="Home.php"><i class="fas fa-home" id="first-link"></i><span>Home</span></a>
+            <a href="#"><i class="fas fa-home" id="first-link"></i><span>Home</span></a>
             <a style="font-weight: bold" href="#"><i class="fas fa-search" id="second-link"></i><span>Search</span></a>
             <!-- <a style="font-weight:bold href=" Search.php"><i class="fas fa-search" id="second-link"></i><span>Search</span></a> -->
             <a href="BrowseSearchResults.php"><i class="fas fa-book" id="third-link"></i><span>Browse</span></a>
             <a href="Favorites.php"><i class="fas fa-star" id="fourth-link"></i><span>Favorites</span></a>
+            <a id="hideTest"><i class="fas fa-home"></i><span>Single Song</span></a>
         </div>
         <br>
     </aside>
@@ -126,7 +127,7 @@
         </div>
     </article>
 
-    <article id="songView">
+    <article id="songView" class="hidden">
         <p>SONG VIEW</p>
         <h1 class="unselectable">Song Information</h1>
 
@@ -137,7 +138,7 @@
             </div>
 
             <div class="one_box" id="info_format">
-                <?php
+                <!-- <?php CONVERT TO JS
             $song = $songs[0];
             $seconds = $song['duration'];
             $minutes = (int)($seconds/60);
@@ -146,14 +147,13 @@
             echo $song['title'] . "  <br> by " . $song['artist_name'] . " - " . $song['type_name']
             . "<br>  " . $song['genre_name'] . " - Released " . $song['year'] . " <br>" . " Duration: "
              . $minutes . ":" .$seconds;
-            // <!-- GET: title, artist, artist type, genre, year, duration -->
-            ?>
+            // GET: title, artist, artist type, genre, year, duration 
+            ?>  -->
             </div>
 
             <br><br>
-
             <div class="two_box">
-                <h4>Technical data:</h4>
+                <h4>Technical data:</h4> <!-- CONVERT TO JS -->
                 <ul>
                     <li> BPM: <?php echo $song['bpm'] ?></li>
                     <li> energy: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <progress id="energyBar"
@@ -176,6 +176,8 @@
     <article id="playlistView">
         <p>PLAYLIST VIEW</p>
     </article>
+
+    <script src="js/assign2.js"></script>
 </body>
 
 </html>
