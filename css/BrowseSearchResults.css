@@ -1,0 +1,271 @@
+/* 
+
+Refrence:
+
+Side Navigation - https://www.w3schools.com/howto/howto_js_sidenav.asp
+Grid Layout - https://grid.layoutit.com
+Flexbox - https://css-tricks.com/snippets/css/complete-guide-grid
+Gradient Background Animation - https://codepen.io/P1N2O/pen/pyBNzX
+Images - https://unsplash.com
+Unselectable Text - https://css-tricks.com/almanac/properties/u/user-select
+Side Navigation Icons - https://fontawesome.com/icons
+Footer - https://www.digitalocean.com/community/tutorials/how-to-create-a-static-footer-with-html-and-css-section-7 
+
+
+*/
+
+
+
+/* overall ---------------------------------------------------------------*/
+
+body {
+  margin-left: 300px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: arial, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* other styling ----------------------------------------------------------*/
+
+.pb-50 {
+  padding-bottom: 40px;
+}
+
+.ft-15 {
+  font-size: 15px;
+}
+
+.h1,
+h1 {
+  font-size: 100px;
+  font-weight: 600;
+  padding-top: 40px;
+
+  color: white;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.table-hover tr:hover {
+  background: linear-gradient(-70deg, #135496, #1866b5);
+  animation: gradient ease-in 1s infinite;
+  background-size: 400% 400%;
+}
+
+/* side navigation bar ---------------------------------------------------*/
+
+.sidenav {
+  background: linear-gradient(-68deg, #1866b5, #135496, #1c0959);
+  animation: gradient 7s ease infinite;
+  height: 100vh;
+  background-size: 200% 200%;
+
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  padding: 20px 0 0 32px;
+  overflow: hidden;
+
+  border-inline-end-color: rgb(36, 40, 67);
+  border-inline-end-style: solid;
+  border-inline-end-width: 1px;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.logo img {
+  max-width: 150px;
+  background-color: transparent;
+}
+
+.menulink a {
+  padding: 6px 6px 6px 0;
+  text-decoration: none;
+
+  line-height: 1.45;
+  font-weight: 400;
+  letter-spacing: 0;
+  font-size: 15px;
+  color: #ffffff;
+  display: block;
+}
+
+.menulink i {
+  padding-right: 20px;
+}
+
+.btn {
+  width: 100%;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.btn-light {
+  background-color: rgb(41, 41, 41);
+  color: rgb(255, 255, 255);
+}
+
+.btn-dark {
+  background-color: #2b2525;
+  color: white;
+  border-color: white;
+}
+
+.fa-home,
+.fa-search,
+.fa-book,
+.fa-fstar,
+.fa-fstar {
+  color: rgb(78, 187, 206);
+  background-color: transparent;
+  height: 24px;
+  width: 24px;
+}
+
+/* main body section -----------------------------------------------------*/
+
+main {
+  margin-left: 250px;
+  margin-bottom: 60px;
+  color: white;
+  overflow: hidden;
+}
+
+element.style {
+  padding-top: 50px;
+}
+
+.container-flex {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 auto;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+/* footer ----------------------------------------------------------------*/
+
+footer {
+  background-color: #b91414;
+  width: 100%;
+  padding-top: 10px;
+  position: fixed;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  color: rgb(255, 255, 255);
+}
+
+footer i {
+  padding: 80px 20px 0 0;
+  font-size: 11px;
+}
+
+footer span {
+  font-family: Brush Script MT, cursive;
+  font-size: 18px;
+}
+
+/* responsive layouts ----------------------------------------------------*/
+
+@media all and (max-width: 768px) {
+  .sidenav {
+    width: 100px;
+    padding: 10px 0 0 10px;
+  }
+
+  main {
+    margin-left: 100px;
+  }
+
+  .sidenav span {
+    display: none;
+  }
+
+  .menulink i {
+    font-size: 20px;
+    padding-bottom: 20px;
+  }
+
+  .menulink a:first-child {
+    border: none;
+    padding: 0;
+  }
+
+  .logo img {
+    max-width: 80px;
+  }
+
+  .btn {
+    font-size: 10px;
+  }
+}
+
+/* this is for the arrow to go back up styling ---------------------------*/
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border-radius: 50px;
+  text-align: center;
+  font-weight: 200;
+  box-shadow: 2px 2px 3px rgb(51, 51, 51);
+  margin: 0%;
+}
+
+#up-arrow {
+  color: rgb(0, 0, 0);
+  margin: -20%;
+  font-weight: bold;
+
+  font-size: 18px;
+  line-height: 30px;
+  margin: 2%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 150px;
+  padding-top: 16px;
+}
