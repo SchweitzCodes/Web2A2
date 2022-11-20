@@ -1,3 +1,4 @@
+const songData = `[
 [{
 		"song_id": 1167,
 		"title": "Alarm",
@@ -134,3 +135,4 @@
 		}
 	}
 ]
+]`;

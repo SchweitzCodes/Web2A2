@@ -1,3 +1,4 @@
+const genreData = `[
 [{
 		"id": 101,
 		"name": "afroswing"
@@ -91,3 +92,4 @@
 		"name": "r&b"
 	}
 ]
+]`;
