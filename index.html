@@ -44,68 +44,102 @@
         <br>
     </aside>
 
-    <article id="searchView">
-        <p>SEARCH VIEW</p>
+    <!-- THIS IS NEW GRID -------------------------------------------------------------------------- -->
+    <div class="grid-box">
 
-        <!-- this is a tag line that brings people in -->
-        <!-- <div class="title">
-            <h1 class="unselectable">Search Over Millions Of Songs...</h1>
-        </div> -->
+        <!-- START OF LEFT SECTION -->
+        <div class="title">
 
+            <div id="searchView">
 
-        <!-- tabs and choices on choosing to search -->
-        <div class=" container-flex">
-
-            <!-- start here -->
-            <form method="get" action="#">
-
-                <!-- Title -->
-                <input type="radio" id="title" name="SearchType" value="title">
-                <label>Title</label>
-                <input type="text" name="search" size=50 /> <br />
-
-                <!-- Artist -->
-                <div class="field">
-                    <input type="radio" id="artist" name="SearchType" value="artist">
-                    <label>Artist</label>
-                    <select class="artist_drop" name="artistSearch">
-                        <option value='0'>Select Artist</option>
-                        <!--   populate Artist list (done is js)     -->
-                    </select>
+                <!-- FOR TITLE OF SECTION -->
+                <div class="title-title">
+                    <p>SEARCH VIEW</p>
                 </div>
+                <!-- END OF TITLE OF SECTION -->
 
-                <!-- Genre -->
-                <input type="radio" id="genre" name="SearchType" value="genre">
-                <label>Genre</label>
-                <select class="genre_drop" name="genreSearch">
-                    <!--   populate Genre list (done is js)     -->
-                    <option value='0'>Select Genre</option>
-                </select>
 
-                </br></br></br>
+                <!-- this is a tag line that brings people in -->
+                <!-- <div class="title">
+                <h1 class="unselectable">Search Over Millions Of Songs...</h1>
+                </div> -->
 
-                <!-- Search button -->
-                <div class="line">
-                    <input type="submit" value="Search">
+
+                <!-- START OF CONTENT (DISPLAY) -->
+                <div class="title-display">
+
+                    <!-- tabs and choices on choosing to search -->
+                    <div class=" container-flex">
+
+                        <!-- start here -->
+                        <form method="get" action="#">
+
+                            <!-- Title -->
+                            <input type="radio" id="title" name="SearchType" value="title">
+                            <label>Title</label>
+                            <input type="text" name="search" size=50 /> <br />
+
+                            <!-- Artist -->
+                            <div class="field">
+                                <input type="radio" id="artist" name="SearchType" value="artist">
+                                <label>Artist</label>
+                                <select class="artist_drop" name="artistSearch">
+                                    <option value='0'>Select Artist</option>
+                                    <!--   populate Artist list (done is js)     -->
+                                </select>
+                            </div>
+
+                            <!-- Genre -->
+                            <input type="radio" id="genre" name="SearchType" value="genre">
+                            <label>Genre</label>
+                            <select class="genre_drop" name="genreSearch">
+                                <!--   populate Genre list (done is js)     -->
+                                <option value='0'>Select Genre</option>
+                            </select>
+
+                            </br></br></br>
+
+                            <!-- Search button -->
+                            <div class="line">
+                                <input type="submit" value="Search">
+                            </div>
+
+                        </form>
+                    </div>
                 </div>
-
-            </form>
-        </div>
-        </div>
-    </article>
-
-    <article id="songView" class="hidden">
-        <p>SONG VIEW</p>
-        <h1 class="unselectable">Song Information</h1>
-
-        <div class="box">
-
-            <div class="music-cover">
+                <!-- END OF CONTENT (DISPLAY) -->
 
             </div>
 
-            <div class="one_box" id="info_format">
-                <!-- <?php CONVERT TO JS
+        </div>
+        <!-- END OF LEFT SECTION -->
+
+
+        <!-- START OF RIGHT SECTION -->
+        <div class="info">
+
+            <!-- FOR TITLE OF RIGHT SECTION -->
+            <div class="into-title">
+
+                <article id="songView" class="hidden">
+                    <p>SONG VIEW</p>
+                    <h1 class="unselectable">Song Information</h1>
+
+            </div>
+            <!-- END OF TITLE OF RIGHT SECTION -->
+
+            <!-- START OF INFO (DISPLAY) -->
+            <div class="info-display">
+
+
+                <div class="box">
+
+                    <div class="music-cover">
+
+                    </div>
+
+                    <div class="one_box" id="info_format">
+                        <!-- <?php CONVERT TO JS
             $song = $songs[0];
             $seconds = $song['duration'];
             $minutes = (int)($seconds/60);
@@ -116,35 +150,48 @@
              . $minutes . ":" .$seconds;
             // GET: title, artist, artist type, genre, year, duration 
             ?>  -->
-            </div>
+                    </div>
 
-            <br><br>
-            <div class="two_box">
-                <h4>Technical data:</h4> <!-- CONVERT TO JS -->
-                <ul>
-                    <li> BPM: <?php echo $song['bpm'] ?></li>
-                    <li> energy: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <progress id="energyBar"
-                            max="100" value="<?php echo $song['energy']?>"></li>
-                    <li> danceability: &nbsp;&nbsp;<progress id="energyBar" max="100"
-                            value="<?php echo $song['danceability']?>"></li>
-                    <li> liveness:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <progress id="energyBar" max="100"
-                            value="<?php echo $song['liveness']?>"></li>
-                    <li> acousticness: <progress id="energyBar" max="100" value="<?php echo $song['acousticness']?>">
-                    </li>
-                    <li> speechiness:&nbsp; <progress id="energyBar" max="100"
-                            value="<?php echo $song['speechiness']?>"> </li>
-                    <li> popularity: &nbsp;&nbsp;&nbsp;&nbsp; <progress id="popularityBar" max="100"
-                            value="<?php echo $song['popularity']?>"> </li>
-                </ul>
+                    <br><br>
+                    <div class="two_box">
+                        <h4>Technical data:</h4> <!-- CONVERT TO JS -->
+                        <ul>
+                            <li> BPM:
+                                <?php echo $song['bpm'] ?>
+                            </li>
+                            <li> energy: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <progress id="energyBar"
+                                    max="100" value="<?php echo $song['energy']?>"></li>
+                            <li> danceability: &nbsp;&nbsp;<progress id="energyBar" max="100"
+                                    value="<?php echo $song['danceability']?>"></li>
+                            <li> liveness:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <progress id="energyBar"
+                                    max="100" value="<?php echo $song['liveness']?>"></li>
+                            <li> acousticness: <progress id="energyBar" max="100"
+                                    value="<?php echo $song['acousticness']?>">
+                            </li>
+                            <li> speechiness:&nbsp; <progress id="energyBar" max="100"
+                                    value="<?php echo $song['speechiness']?>"> </li>
+                            <li> popularity: &nbsp;&nbsp;&nbsp;&nbsp; <progress id="popularityBar" max="100"
+                                    value="<?php echo $song['popularity']?>"> </li>
+                        </ul>
+                    </div>
+                </div>
+                </article>
+
+                <article id="playlistView">
+                    <p>PLAYLIST VIEW</p>
+                </article>
+
             </div>
+            <!-- END OF INFO (DISPLAY) -->
+
+            <!-- <script src="js/assign2.js"></script> -->
+
         </div>
-    </article>
+        <!-- END OF RIGHT SECTION -->
 
-    <article id="playlistView">
-        <p>PLAYLIST VIEW</p>
-    </article>
+    </div>
+    <!-- THIS IS END OF NEW GRID -------------------------------------------------------------------------------------- -->
 
-    <!-- <script src="js/assign2.js"></script> -->
 </body>
 
 </html>
