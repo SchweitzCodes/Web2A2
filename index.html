@@ -57,7 +57,7 @@
         <div class=" container-flex">
 
             <!-- start here -->
-            <form method="get" action="BrowseSearchResults.php">
+            <form method="get" action="#">
 
                 <!-- Title -->
                 <input type="radio" id="title" name="SearchType" value="title">
@@ -65,17 +65,12 @@
                 <input type="text" name="search" size=50 /> <br />
 
                 <!-- Artist -->
-                <!--   populate asrist list     -->
                 <div class="field">
                     <input type="radio" id="artist" name="SearchType" value="artist">
                     <label>Artist</label>
                     <select class="artist_drop" name="artistSearch">
                         <option value='0'>Select Artist</option>
-                        <!-- <?php
-                    foreach ($artists as $row) {
-                        echo "<option value='" . $row['artist_id'] . "'>" . $row['artist_name'] . "</option>";
-                    }
-                    ?> -->
+                        <!--   populate Artist list (done is js)     -->
                     </select>
                 </div>
 
@@ -83,13 +78,8 @@
                 <input type="radio" id="genre" name="SearchType" value="genre">
                 <label>Genre</label>
                 <select class="genre_drop" name="genreSearch">
-                    <!--   populate Genre list     -->
+                    <!--   populate Genre list (done is js)     -->
                     <option value='0'>Select Genre</option>
-                    <!-- <?php
-                foreach ($genres as $row) {
-                    echo "<option value='" . $row['genre_id'] . "'>" . $row['genre_name'] . "</option>";
-                }
-                ?> -->
                 </select>
 
                 </br></br></br>
